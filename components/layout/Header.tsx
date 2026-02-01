@@ -14,7 +14,11 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Header() {
+interface HeaderProps {
+  variant?: "fixed" | "nofixed";
+}
+
+export default function Header({ variant = "fixed" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,10 +30,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const positionClass = variant === "fixed" ? "fixed" : "relative";
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"
+      className={`${positionClass} top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled && variant === "fixed" ? "bg-black/20 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6 bg-white/10"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">

@@ -78,7 +78,7 @@ const Info = () => {
 
                     <div ref={textRef2} className="text-lg md:text-xl text-gray-600 leading-loose space-y-6">
                         <p>
-                            During the week, the chefs at Hopper will offer a reduced menu to vary the sweet and savory delights according to the seasons.
+                            Tout au long de la semaine, les chefs du restaurant Hopper proposeront un menu réduit afin de varier les plaisirs sucrés et salés en fonction des saisons.
                         </p>
                         <p>
                           Et enfin, pour se donner un peu de courage, rien ne vaut un Smoothie maison, un Jus pressé ou bien d'autres délicieux nectars !
@@ -92,28 +92,12 @@ Les 18 pressions et canettes ont été sélectionnées avec le plus grand soin a
                         </p>
                     </div>
                 </div>
-                 <div
-  className="
-    relative
-    w-full
-    max-w-[440px]
-    aspect-[7/4]
-    md:absolute
-    md:left-0
-    md:bottom-0
-    shrink-0
-    rounded-3xl
-    overflow-hidden
-    mx-auto
-    md:mx-0
-  "
->
-
+                <div className="relative w-full max-w-[300px] md:max-w-[510px] h-auto aspect-[510/291] shrink-0 rounded-3xl overflow-hidden shadow-xl mx-auto md:mx-0">
                     <Image 
-                        src="/beverage/beverage.png" 
+                        src="/bar/beer.avif" 
                         alt="Beverage Logo" 
                         fill
-                        className="object-contain"
+                        className="object-cover"
                     />
                 </div>
             </div>

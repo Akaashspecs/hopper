@@ -1,18 +1,25 @@
 "use client";
 
+import { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Drink } from "./BeverageShowcase";
 import Image from "next/image";
+import { Lobster } from "next/font/google";
 
 interface DrinkDisplayProps {
   drink: Drink;
 }
 
+const lobster = Lobster({
+    weight: "400",
+    subsets: ["latin"],
+});
+
 export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
   return (
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-black h-screen">
         {/* Background Atmosphere - Blurry version of the drink */}
-        <div className="absolute inset-0 z-0 transition-all duration-1000">
+        <div className=" absolute inset-0 z-0 transition-all duration-1000">
              <Image 
                 src={drink.image} 
                 alt="bg" 
@@ -26,10 +33,10 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
              <div className="absolute inset-0 bg-black/10" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full py-20">
+        <div className="container mb-[269px] md:mb-0 mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2  md:gap-12 items-center h-full  md:py-20 overflow-y-auto md:overflow-visible no-scrollbar">
             
             {/* Text Content */}
-            <div className="order-2 md:order-1 text-center md:text-left">
+            <div className=" order-2 md:order-1 w-full text-center md:text-left mt-8 md:mt-0 absolute md:relative z-50">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={drink.id}
@@ -38,27 +45,33 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <p className="text-gold/80 text-sm tracking-[0.2em] uppercase mb-4 pl-1 font-sans">Signature Cocktail</p>
-                        <h2 className="text-6xl md:text-8xl font-serif text-white mb-6 leading-tight">
-                            {drink.name}
-                        </h2>
-                        <div className="h-[1px] w-24 bg-gradient-to-r from-gold to-transparent mb-8 mx-auto md:mx-0" />
-                        <p className="text-xl md:text-2xl text-stone-300 font-light mb-10 max-w-lg mx-auto md:mx-0 font-serif leading-relaxed">
+                        <p className={`hidden md:block text-gold/90 text-xl md:text-3xl tracking-wide mb-2 pl-1 font-serif italic`}>Signature Cocktail</p>
+<h2
+  className={`${lobster.className} mt-[65%] w-full text-5xl md:text-6xl lg:text-8xl mb-4 md:mb-6 leading-tight
+    bg-gradient-to-r from-pink-300 via-rose-300 to-amber-300
+  bg-clip-text text-transparent
+
+  drop-shadow-[2px_2px_0_rgba(236,72,153,0.8)]
+  drop-shadow-[0_6px_14px_rgba(0,0,0,0.5)]`}
+>
+  {drink.name}
+</h2>
+
+                        <div className="h-px w-16 md:w-24 bg-linear-to-r from-gold to-transparent mb-6 md:mb-8 mx-auto md:mx-0" />
+                        <p className="hidden md:block text-base md:text-2xl text-stone-300 font-light mb-6 md:mb-10 max-w-lg mx-auto md:mx-0 font-serif leading-relaxed">
                             {drink.description}
                         </p>
-                        <p className="text-4xl font-serif text-gold">
-                            {drink.price}
-                        </p>
+                      
                     </motion.div>
                 </AnimatePresence>
             </div>
 
             {/* Image Showcase */}
-            <div className="order-1 md:order-2 flex rounded-2xl justify-center items-center h-[350px] md:h-[600px] relative w-full perspective-1000 mt-10 md:mt-0">
+            <div className="order-1 md:order-2 flex justify-center items-center h-[45vh] md:h-[600px] relative w-full perspective-1000 mt-2 md:mt-0">
                  <AnimatePresence mode="popLayout" initial={false}>
                     <motion.div
                         key={drink.id}
-                        initial={{ opacity: 0, scale: 0.5, y: 100, rotateX: 20 }}
+                        initial={{ opacity: 0, scale: 0.8, y: 50, rotateX: 10 }}
                         animate={{ 
                             opacity: 1, 
                             scale: 1, 
@@ -72,15 +85,15 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
                             }
                         }}
                         exit={{ opacity: 0, scale: 0.8, y: -50 }}
-                        className="relative w-full max-w-[300px] md:max-w-[600px] h-full flex items-center justify-center"
+                        className="relative w-full max-w-[80vw] md:max-w-[600px] h-full flex items-center justify-center p-4"
                     >
                          {/* Drink Image - Popping Out */}
                          <motion.div
-                             className="relative w-full h-full z-30 mb-8 border rounded-2xl shadow-2xl border-black"
-                             initial={{ y: 50, scale: 0.8 }}
+                             className="relative w-full h-full z-30 border rounded-2xl shadow-2xl border-black/50"
+                             initial={{ y: 20, scale: 0.95 }}
                              animate={{ 
-                                 y: -20, 
-                                 scale: 1.15,
+                                 y: -10, 
+                                 scale: 1.05,
                                  transition: { 
                                      delay: 0.3,
                                      duration: 0.8,

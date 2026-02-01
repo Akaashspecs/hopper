@@ -5,7 +5,7 @@ import BeverageShowcase from "@/components/beverages/BeverageShowcase";
 export default function BeveragesPage() {
   return (
     <main className="min-h-screen bg-black text-foreground flex flex-col">
-      <Header />
+      <Header variant="mobile-nofixed" />
       
       <div className="flex-1 w-full ">
         <BeverageShowcase />
