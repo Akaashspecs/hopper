@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Great_Vibes } from "next/font/google";
+import Image from "next/image";
 
 const greatVibes = Great_Vibes({
     weight: "400",
@@ -52,9 +53,10 @@ const Info = () => {
     );
 
     return (
-        <section ref={containerRef} className="py-32 px-6 md:px-12 bg-neutral-50 text-black overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-16">
-
+        <section ref={containerRef} className="py-32 px-6 md:px-12 bg-white text-black overflow-hidden">
+            <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-16">
+       
+              
                 {/* Visual / Title Side */}
                 <div className="w-full md:w-1/3 text-center md:text-right">
                     <h2
@@ -89,6 +91,30 @@ const Info = () => {
 Les 18 pressions et canettes ont été sélectionnées avec le plus grand soin afin d'étancher la soif de quelques-uns, de retrouver des valeurs sûres pour d'autres et enfin, et surtout, de faire découvrir de très belles choses à tout le monde.
                         </p>
                     </div>
+                </div>
+                 <div
+  className="
+    relative
+    w-full
+    max-w-[440px]
+    aspect-[7/4]
+    md:absolute
+    md:left-0
+    md:bottom-0
+    shrink-0
+    rounded-3xl
+    overflow-hidden
+    mx-auto
+    md:mx-0
+  "
+>
+
+                    <Image 
+                        src="/beverage/beverage.png" 
+                        alt="Beverage Logo" 
+                        fill
+                        className="object-contain"
+                    />
                 </div>
             </div>
         </section>

@@ -16,8 +16,7 @@ export default function Home() {
       <Info/>
       <MenuPreview />
  
-    
-      <VibeSection />
+
 
         <MapSection/>
              <Reviews />
