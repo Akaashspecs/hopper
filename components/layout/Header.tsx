@@ -96,7 +96,7 @@ export default function Header({ variant = "fixed" }: HeaderProps) {
                 </Link>
               ))}
               <a 
-                href="/menu" 
+               href="https://menu.eazee-link.com/?o=q&id=G3NALPTT9N"
                 className="w-full text-center px-6 py-3 border border-gold text-gold font-serif text-lg hover:bg-gold hover:text-black transition-all duration-300 rounded-sm mt-4"
               >
                 View Menu
