@@ -48,7 +48,12 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          <a target="_blank" rel="noopener noreferrer" href="https://menu.eazee-link.com/?o=q&id=G3NALPTT9N" >
+          <a 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            href="https://menu.eazee-link.com/?o=q&id=G3NALPTT9N"
+            className="px-6 py-2 border border-gold text-gold font-serif text-sm tracking-widest uppercase hover:bg-gold hover:text-black transition-all duration-300 rounded-sm"
+          >
             View Menu
           </a>
         </nav>
@@ -82,7 +87,10 @@ export default function Header() {
                   {link.name}
                 </Link>
               ))}
-              <a href="/menu"   className="w-full">
+              <a 
+                href="/menu" 
+                className="w-full text-center px-6 py-3 border border-gold text-gold font-serif text-lg hover:bg-gold hover:text-black transition-all duration-300 rounded-sm mt-4"
+              >
                 View Menu
               </a>
             </nav>

@@ -12,14 +12,18 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
   return (
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-black h-screen">
         {/* Background Atmosphere - Blurry version of the drink */}
-        <div className="absolute inset-0 z-0  transition-all duration-1000">
+        <div className="absolute inset-0 z-0 transition-all duration-1000">
              <Image 
                 src={drink.image} 
                 alt="bg" 
                 fill 
-                className="object-cover blur-xl scale-110 opacity-50"
+                className="object-cover blur-2xl scale-125 opacity-60"
+                priority
                 key={drink.image + "bg"}
              />
+             {/* Gradient Overlay for Depth */}
+             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+             <div className="absolute inset-0 bg-black/10" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full py-20">
@@ -32,16 +36,17 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <h2 className="text-5xl md:text-7xl font-serif text-gold mb-4 drop-shadow-lg">
+                        <p className="text-gold/80 text-sm tracking-[0.2em] uppercase mb-4 pl-1 font-sans">Signature Cocktail</p>
+                        <h2 className="text-6xl md:text-8xl font-serif text-white mb-6 leading-tight">
                             {drink.name}
                         </h2>
-                        <div className="h-1 w-20 bg-gold/50 mb-6 mx-auto md:mx-0" />
-                        <p className="text-xl md:text-2xl text-white/90 font-light mb-8 max-w-lg mx-auto md:mx-0 font-serif italic">
-                            "{drink.description}"
+                        <div className="h-[1px] w-24 bg-gradient-to-r from-gold to-transparent mb-8 mx-auto md:mx-0" />
+                        <p className="text-xl md:text-2xl text-stone-300 font-light mb-10 max-w-lg mx-auto md:mx-0 font-serif leading-relaxed">
+                            {drink.description}
                         </p>
-                        <p className="text-3xl font-serif text-gold-light">
+                        <p className="text-4xl font-serif text-gold">
                             {drink.price}
                         </p>
                     </motion.div>
@@ -49,7 +54,7 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
             </div>
 
             {/* Image Showcase */}
-            <div className="order-1 md:order-2 flex justify-center items-center h-[500px] md:h-[600px] relative w-full perspective-1000">
+            <div className="order-1 md:order-2 flex rounded-2xl justify-center items-center h-[350px] md:h-[600px] relative w-full perspective-1000 mt-10 md:mt-0">
                  <AnimatePresence mode="popLayout" initial={false}>
                     <motion.div
                         key={drink.id}
@@ -67,17 +72,11 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
                             }
                         }}
                         exit={{ opacity: 0, scale: 0.8, y: -50 }}
-                        className="relative w-[600px] h-[600px] flex items-center justify-center"
+                        className="relative w-full max-w-[300px] md:max-w-[600px] h-full flex items-center justify-center"
                     >
-                         {/* iPhone Border */}
-                      
-
                          {/* Drink Image - Popping Out */}
-                         {/* Z-index 30 puts it above the phone border -> Popping OUT */}
-                         {/* To make it look like it's coming FROM the screen, we might need a mask or careful positioning. 
-                             For now, let's try scaling it up so it overflows the screen boundaries creatively. */}
                          <motion.div
-                             className="relative w-[900px] h-[600px] z-30 mb-8 border border-black "
+                             className="relative w-full h-full z-30 mb-8 border rounded-2xl shadow-2xl border-black"
                              initial={{ y: 50, scale: 0.8 }}
                              animate={{ 
                                  y: -20, 
@@ -93,7 +92,7 @@ export default function DrinkDisplay({ drink }: DrinkDisplayProps) {
                                 src={drink.image}
                                 alt={drink.name}
                                 fill
-                                className="object-cover drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
+                                className="object-cover rounded-2xl drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)]"
                                 priority
                             />
                          </motion.div>

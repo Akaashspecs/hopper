@@ -37,10 +37,10 @@ export default function DrinkSlider({ drinks, selectedId, onSelect }: DrinkSlide
           data-id={drink.id}
           onClick={() => onSelect(drink)}
           className={cn(
-            "shrink-0 relative w-32 h-40 md:w-36 md:h-48 rounded-lg overflow-hidden cursor-pointer snap-center border-2 transition-all duration-300 group",
+            "shrink-0 relative w-32 h-40 md:w-36 md:h-48 rounded-sm overflow-hidden cursor-pointer snap-center border-t border-b transition-all duration-500 group",
             selectedId === drink.id 
-                ? "border-gold scale-105 shadow-[0_0_20px_rgba(212,175,55,0.4)]" 
-                : "border-transparent opacity-60 hover:opacity-100"
+                ? "border-gold opacity-100 scale-100" 
+                : "border-transparent opacity-50 hover:opacity-80 scale-95"
           )}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

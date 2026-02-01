@@ -6,12 +6,14 @@ import VibeSection from "@/components/home/VibeSection";
 import Reviews from "@/components/home/Reviews";
 import Location from "@/components/home/Location";
 import MapSection from "./components/MapSection";
+import Info from "@/components/home/Info";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
+      <Info/>
       <MenuPreview />
  
     

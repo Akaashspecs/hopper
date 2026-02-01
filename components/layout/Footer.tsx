@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,8 +11,8 @@ export default function Footer() {
         
         {/* Brand */}
         <div>
-          <h3 className="text-2xl font-serif text-gold mb-4">HOPPER</h3>
-          <p className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+          <Image src="/logo/logo.avif" alt="Logo" width={110} height={110} />
+          <p className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0 mt-3">
             A premium sanctuary for cocktail enthusiasts. Experience the art of mixology in an atmosphere of refined elegance.
           </p>
         </div>

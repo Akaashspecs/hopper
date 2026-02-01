@@ -76,7 +76,7 @@ export default function MapSection() {
                 {/* Header */}
                 <div className="text-center mb-16 info-card-item">
                     <h2 className={`${greatVibes.className}  text-6xl text-amber-700 mb-4 drop-shadow-sm`}>
-                        La Nostra Posizione
+                        Notre Emplacement
                     </h2>
                     <div className="h-1 w-20 bg-amber-400 mx-auto rounded-full mb-6"></div>
                     <p className="text-xl text-stone-500 font-light max-w-2xl mx-auto italic">
@@ -120,18 +120,19 @@ export default function MapSection() {
                         {/* Box 1: Orari */}
                         <div className="info-card-item bg-white p-8 rounded-xl shadow-lg border-l-[6px] border-amber-400 group hover:shadow-2xl transition-all duration-300">
                            <div className="flex items-center justify-between mb-4">
-                               <h3 className={`${greatVibes.className} text-4xl text-stone-800 group-hover:text-amber-700 transition-colors`}>Orari</h3>
+                               <h3 className={`${greatVibes.className} text-4xl text-stone-800 group-hover:text-amber-700 transition-colors`}>Heures d'ouverture
+</h3>
                                <svg className="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                            </div>
                            
                            <div className="space-y-3 pl-2">
                                 <div className="flex justify-between items-center text-stone-600 border-b border-stone-50 pb-2">
-                                    <span className="font-semibold text-sm tracking-widest uppercase text-stone-400">Giorni</span>
-                                    <span className="font-serif text-lg">Lunedì - Domenica</span>
+                                    <span className="font-semibold text-sm tracking-widest uppercase text-stone-400">Lun - Sam</span>
+                                    <span className="font-serif text-lg">07:00 am - 01:00 am</span>
                                 </div>
                                 <div className="flex justify-between items-center text-stone-600">
-                                    <span className="font-semibold text-sm tracking-widest uppercase text-stone-400">Ricevimento</span>
-                                    <span className="font-serif text-lg">07:00 - 22:00</span>
+                                    <span className="font-semibold text-sm tracking-widest uppercase text-stone-400">Dimanche</span>
+                                    <span className="font-serif text-lg">08:30 am - 01:00 am</span>
                                 </div>
                            </div>
                         </div>
@@ -139,13 +140,13 @@ export default function MapSection() {
                         {/* Box 2: Servizi */}
                          <div className="info-card-item bg-white p-8 rounded-xl shadow-lg border-l-[6px] border-stone-300 group hover:border-amber-400 hover:shadow-2xl transition-all duration-300">
                            <div className="flex items-center justify-between mb-6">
-                               <h3 className={`${greatVibes.className} text-3xl text-stone-800 group-hover:text-amber-700 transition-colors`}>Servizi Esclusivi</h3>
+                               <h3 className={`${greatVibes.className} text-3xl text-stone-800 group-hover:text-amber-700 transition-colors`}>Services Exclusifs</h3>
                                <svg className="w-6 h-6 text-stone-400 group-hover:text-amber-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
                            </div>
                            <ul className="grid grid-cols-2 gap-4">
                                 {[
-                                    "Bar Lounge", "Ristorante", "Animali Ammessi", 
-                                    "Aria Condizionata", "Parcheggio", "Piscina"
+                                    "Bar Lounge", "Restaurant", "ambiance haut de gamme", 
+                                    "Climatisation", "Parking", "Piscine"
                                 ].map((service, index) => (
                                     <li key={index} className="flex items-center space-x-3 text-stone-600">
                                         <span className="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
