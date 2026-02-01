@@ -32,7 +32,7 @@ const cocktails = [
 export default function MenuPreview() {
   return (
     <div  >
-     <Image src="/bar/bar.png" alt="Menu" width={1920} height={1080} />
+     <Image src="/bar/bar.png" className="xl:mx-auto rounded-2xl " alt="Menu" width={1920} height={1080} />
     </div>
   );
 }

@@ -7,14 +7,70 @@ import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const reviews = [
-  { id: 1, name: "Elena R.", role: "Food Critic", content: "An absolute masterpiece of mixology. The attention to detail is unrivaled.", rating: 5, color: "bg-white" },
-  { id: 2, name: "James T.", role: "Regular", content: "The atmosphere transports you to another era. My go-to spot.", rating: 5, color: "bg-stone-50" },
-  { id: 3, name: "Sarah L.", role: "Sommelier", content: "Impeccable wine selection, but the signature cocktails stole the show.", rating: 5, color: "bg-amber-50" },
-  { id: 4, name: "Michael B.", role: "Designer", content: "Visually stunning. Every corner is a photo opportunity.", rating: 5, color: "bg-white" },
-  { id: 5, name: "Jessica K.", role: "Event Planner", content: "Hosted a private party here and the service was flawless.", rating: 5, color: "bg-stone-50" },
-  { id: 6, name: "David W.", role: "Chef", content: "Flavor profiles that challenge and delight the palate.", rating: 5, color: "bg-amber-50" },
-  { id: 7, name: "Olivia P.", role: "Artist", content: "The 'Golden Hopper' is not just a drink, it's an experience.", rating: 5, color: "bg-white" },
-  { id: 8, name: "Ryan G.", role: "Musician", content: "Great acoustics, better drinks. The perfect chill spot.", rating: 5, color: "bg-stone-50" },
+  {
+    id: 1,
+    name: "Elena R.",
+    role: "Critique gastronomique",
+    content: "Un véritable chef-d’œuvre de mixologie. L’attention portée aux détails est inégalée.",
+    rating: 5,
+    color: "bg-white"
+  },
+  {
+    id: 2,
+    name: "James T.",
+    role: "Client régulier",
+    content: "L’atmosphère vous transporte dans une autre époque. Mon adresse incontournable.",
+    rating: 5,
+    color: "bg-stone-50"
+  },
+  {
+    id: 3,
+    name: "Sarah L.",
+    role: "Sommelière",
+    content: "Une sélection de vins irréprochable, mais les cocktails signature volent la vedette.",
+    rating: 5,
+    color: "bg-amber-50"
+  },
+  {
+    id: 4,
+    name: "Michael B.",
+    role: "Designer",
+    content: "Visuellement époustouflant. Chaque recoin est une opportunité photo.",
+    rating: 5,
+    color: "bg-white"
+  },
+  {
+    id: 5,
+    name: "Jessica K.",
+    role: "Organisatrice d’événements",
+    content: "Nous avons organisé une soirée privée ici et le service était irréprochable.",
+    rating: 5,
+    color: "bg-stone-50"
+  },
+  {
+    id: 6,
+    name: "David W.",
+    role: "Chef",
+    content: "Des profils de saveurs qui surprennent et ravissent le palais.",
+    rating: 5,
+    color: "bg-amber-50"
+  },
+  {
+    id: 7,
+    name: "Olivia P.",
+    role: "Artiste",
+    content: "Le « Golden Hopper » n’est pas qu’un cocktail, c’est une véritable expérience.",
+    rating: 5,
+    color: "bg-white"
+  },
+  {
+    id: 8,
+    name: "Ryan G.",
+    role: "Musicien",
+    content: "Excellente acoustique, boissons encore meilleures. L’endroit parfait pour se détendre.",
+    rating: 5,
+    color: "bg-stone-50"
+  }
 ];
 
 export default function Reviews() {
@@ -40,16 +96,16 @@ export default function Reviews() {
   };
 
   return (
-    <Section className="bg-stone-100 overflow-hidden min-h-[800px] flex flex-col justify-center">
-      <div className="container mx-auto px-6 relative h-full flex flex-col items-center">
+    <Section className= " bg-stone-100 overflow-hidden min-h-[600px] flex flex-col justify-center">
+      <div className="container mx-auto relative h-full flex flex-col items-center">
         
         <div className="text-center mb-12 relative z-10 pointer-events-none">
           <h2 className="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Guest Book</h2>
           <p className="text-stone-500">Tap a card to read the experience</p>
         </div>
 
-        {/* The Stack Container */}
-        <div className="relative w-full max-w-lg h-[450px] flex items-center justify-center mt-12 mb-12">
+        {/* The Stack Container (Mobile Only) */}
+        <div className="relative w-full max-w-lg h-[450px]  flex md:hidden items-center justify-center mt-12 mb-12">
             {reviews.map((review, i) => {
                 const zIndex = order.indexOf(review.id);
                 const isTop = zIndex === reviews.length - 1;
@@ -72,7 +128,7 @@ export default function Reviews() {
                     whileHover={{ scale: isTop ? 1.12 : 1.35, cursor: "pointer" }}
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
                     className={cn(
-                        "absolute w-[280px] md:w-[350px] p-8 rounded-sm shadow-xl border border-stone-200/50 flex flex-col justify-between h-[250px]",
+                        "absolute w-[280px] p-8 rounded-2xl shadow-xl border rou border-stone-200/50 flex flex-col justify-between h-[250px]",
                         review.color
                     )}
                   >
@@ -85,7 +141,7 @@ export default function Reviews() {
                                     <Star key={starIndex} size={14} className="fill-amber-400 text-amber-400" />
                                 ))}
                             </div>
-                            <p className="text-stone-700 font-serif italic text-lg leading-relaxed line-clamp-4">
+                            <p className="text-stone-700 font-serif italic text-sm md:text-lg leading-relaxed line-clamp-4">
                                 {review.content}
                             </p>
                         </div>
@@ -100,6 +156,36 @@ export default function Reviews() {
                   </motion.div>
                 );
             })}
+        </div>
+
+        {/* Simple Grid Layout (Desktop Only) */}
+        <div className="hidden md:grid grid-cols-3 gap-8 w-full max-w-6xl mt-12">
+            {reviews.slice(0, 3).map((review) => (
+                <div 
+                    key={review.id}
+                    className="bg-white p-8 rounded-sm shadow-sm border border-stone-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                >
+                    <div className="flex gap-1 mb-6">
+                        {[...Array(review.rating)].map((_, starIndex) => (
+                            <Star key={starIndex} size={16} className="fill-amber-400 text-amber-400" />
+                        ))}
+                    </div>
+                    
+                    <p className="text-stone-700 font-serif italic text-xl leading-relaxed mb-6">
+                        "{review.content}"
+                    </p>
+
+                    <div className="pt-6 border-t border-stone-100 flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-stone-400 font-serif font-bold">
+                            {review.name.charAt(0)}
+                        </div>
+                        <div>
+                            <h4 className="font-serif text-stone-900 font-bold text-lg">{review.name}</h4>
+                            <p className="text-xs uppercase tracking-widest text-stone-400">{review.role}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
       </div>
     </Section>

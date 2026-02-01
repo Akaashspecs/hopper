@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 interface HeaderProps {
-  variant?: "fixed" | "nofixed";
+  variant?: "fixed" | "nofixed" | "mobile-nofixed";
 }
 
 export default function Header({ variant = "fixed" }: HeaderProps) {
@@ -30,12 +30,14 @@ export default function Header({ variant = "fixed" }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const positionClass = variant === "fixed" ? "fixed" : "relative";
+  let positionClass = "fixed";
+  if (variant === "nofixed") positionClass = "relative";
+  if (variant === "mobile-nofixed") positionClass = "absolute md:fixed";
 
   return (
     <header
       className={`${positionClass} top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled && variant === "fixed" ? "bg-black/20 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6 bg-white/10"
+          variant === "fixed" ? "bg-black/20 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6 bg-white/10"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">

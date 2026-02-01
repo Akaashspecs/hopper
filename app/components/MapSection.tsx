@@ -80,7 +80,7 @@ export default function MapSection() {
                     </h2>
                     <div className="h-1 w-20 bg-amber-400 mx-auto rounded-full mb-6"></div>
                     <p className="text-xl text-stone-500 font-light max-w-2xl mx-auto italic">
-                        "Where luxury meets the mountains."
+                        "Café le jour, bière la nuit."
                     </p>
                 </div>
 
@@ -110,7 +110,7 @@ export default function MapSection() {
              
                             </div>
                             <div className="absolute bottom-4 right-4 bg-white/90 px-3 py-1 text-xs font-serif text-stone-500 shadow-sm border border-stone-100 italic">
-                                Caroline Hotel, Dolomites
+                                Hopper, France
                             </div>
                         </div>
                     </div>
@@ -145,8 +145,8 @@ export default function MapSection() {
                            </div>
                            <ul className="grid grid-cols-2 gap-4">
                                 {[
-                                    "Bar Lounge", "Restaurant", "ambiance haut de gamme", 
-                                    "Climatisation", "Parking", "Piscine"
+                                    "Bar Lounge", "Cafe", "Ambiance haut de gamme", 
+                                    "Assis à l'extérieur"
                                 ].map((service, index) => (
                                     <li key={index} className="flex items-center space-x-3 text-stone-600">
                                         <span className="h-1.5 w-1.5 rounded-full bg-amber-400"></span>

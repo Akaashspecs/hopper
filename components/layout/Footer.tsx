@@ -11,9 +11,11 @@ export default function Footer() {
         
         {/* Brand */}
         <div>
-          <Image src="/logo/logo.avif" alt="Logo" width={110} height={110} />
+          <Image src="/logo/logo.avif" className="mx-auto md:mx-0" alt="Logo" width={110} height={110} />
           <p className="text-sm leading-relaxed max-w-xs mx-auto md:mx-0 mt-3">
-            A premium sanctuary for cocktail enthusiasts. Experience the art of mixology in an atmosphere of refined elegance.
+           
+Un lieu d'exception pour les amateurs de cocktails. Découvrez l'art de la mixologie dans une atmosphère d'élégance raffinée.
+
           </p>
         </div>
 
@@ -29,13 +31,13 @@ export default function Footer() {
         {/* Contact & Hours */}
         <div>
           <h4 className="text-lg font-serif text-gold-light mb-2">Visit Us</h4>
-          <p className="text-sm mb-1">123 Cocktail Ave, Cityscape</p>
+          <p className="text-sm mb-1">43 Cr Gambetta, 69003 Lyon, France</p>
           <p className="text-sm mb-4">hello@hopperbar.com</p>
           
           <div className="flex justify-center md:justify-start gap-4 mt-4">
-            <Link href="#" className="hover:text-gold transition-colors"><Instagram size={20} /></Link>
-            <Link href="#" className="hover:text-gold transition-colors"><Twitter size={20} /></Link>
-            <Link href="#" className="hover:text-gold transition-colors"><Facebook size={20} /></Link>
+                        <div  className="hover:text-gold transition-colors"> <a href="https://www.instagram.com/hopperlyon/"><Instagram size={20} /></a></div>
+
+            <div  className="hover:text-gold transition-colors"> <a href="https://www.facebook.com/hopperlyon"><Facebook size={20} /></a></div>
           </div>
         </div>
       </div>

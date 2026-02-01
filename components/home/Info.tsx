@@ -54,7 +54,7 @@ const Info = () => {
 
     return (
         <section ref={containerRef} className="py-32 px-6 md:px-12 bg-white text-black overflow-hidden">
-            <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-16">
+            <div className="relative max-w-7xl mx-auto flex flex-col xl:flex-row items-center xl:items-start gap-16">
        
               
                 {/* Visual / Title Side */}
@@ -65,14 +65,14 @@ const Info = () => {
                     >
                         Chi <br /> siamo
                     </h2>
-                    <div className="hidden md:block w-[1px] h-32 bg-black/30 mx-auto mt-8 md:ml-auto md:mr-10"></div>
+                    <div className="hidden xl:block w-[1px] h-32 bg-black/30 mx-auto mt-8 md:ml-auto md:mr-10"></div>
                 </div>
 
                 {/* Content Side */}
                 <div className="w-full md:w-2/3 space-y-12">
                     <div ref={textRef1} className="text-xl md:text-2xl font-light text-gray-800 leading-relaxed border-l-4 border-black pl-6">
                         <p className="font-semibold">
-         Expertise and quality products...
+       Expertise et produits de qualité...
                         </p>
                     </div>
 

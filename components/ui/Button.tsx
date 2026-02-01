@@ -18,7 +18,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const variants = {
-    primary: "bg-gold text-background hover:bg-gold-light",
+    primary: "bg-gold text-background ",
     outline: "border border-gold text-gold hover:bg-gold/10",
     ghost: "text-gold hover:bg-gold/5",
   };

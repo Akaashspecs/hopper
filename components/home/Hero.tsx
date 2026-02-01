@@ -54,7 +54,7 @@ export default function Hero() {
         {/* Placeholder for premium bar background */}
         <div 
             className="w-full h-full bg-cover bg-center opacity-80 scale-105 animate-subtle-zoom"
-            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop")' }}
+            style={{ backgroundImage: 'url("/home/home.png")' }}
         />
       </div>
 
@@ -70,16 +70,22 @@ export default function Hero() {
           ref={subtitleRef}
           className="text-lg md:text-2xl text-white/90 font-light tracking-widest mb-10 font-sans"
         >
-          EXPERIENCE THE ART OF MIXOLOGY
+         Maison de la bière et du café
         </p>
         
         <div ref={buttonsRef} className="flex flex-col md:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg">
-              View Menu
+            <Button className="rounded-2xl  " variant="primary" size="lg"  >
+             <a
+       target="_blank" 
+            rel="noopener noreferrer" 
+            href="https://menu.eazee-link.com/?o=q&id=G3NALPTT9N"
+           
+  >
+    View Menu
+  </a>
+
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-              Book a Table
-            </Button>
+      
         </div>
       </div>
       

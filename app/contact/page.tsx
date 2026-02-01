@@ -52,16 +52,17 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-7xl font-serif text-gold mb-6"
             >
-              Get in Touch
+      Entrer en contact
+
             </motion.h1>
-            <motion.p 
+            {/* <motion.p 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ delay: 0.3, duration: 0.8 }}
                className="text-foreground/60 max-w-xl mx-auto font-light"
             >
               Reservations, private events, or just to say hello. We look forward to hearing from you.
-            </motion.p>
+            </motion.p> */}
          </div>
       </section>
 
@@ -70,7 +71,7 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2 group">
-                <label className="text-sm tracking-widest uppercase text-gold/80 block">Name</label>
+                <label className="text-sm tracking-widest uppercase text-gold/80 block">Nom</label>
                 <input
                   type="text"
                   name="name"
@@ -96,7 +97,7 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm tracking-widest uppercase text-gold/80 block">Object</label>
+              <label className="text-sm tracking-widest uppercase text-gold/80 block">Objet</label>
               <input
                 type="text"
                 name="object"
@@ -104,7 +105,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 required
                 className="w-full bg-transparent border-b border-foreground/20 py-2 text-foreground focus:outline-none focus:border-gold transition-colors"
-                placeholder="Reservation Inquiry"
+                placeholder="Enquête"
               />
             </div>
 
@@ -117,7 +118,7 @@ export default function ContactPage() {
                 required
                 rows={5}
                 className="w-full bg-transparent border-b border-foreground/20 py-2 text-foreground focus:outline-none focus:border-gold transition-colors resize-none"
-                placeholder="How can we assist you?"
+                placeholder="Comment pouvons-nous vous aider ?"
               />
             </div>
 
@@ -132,7 +133,7 @@ export default function ContactPage() {
                       Sending...
                    </span>
                 ) : (
-                  "Send Message"
+                  "Envoyer"
                 )}
               </Button>
             </div>
